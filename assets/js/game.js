@@ -3,14 +3,10 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 //You can also log multiple values at once like this console.log(playerName, playerAttack, playerHealth);
-var enemyName = ["Roborto", "Amy Android", "Robo Trumble"];
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log(enemyName);
-console.log(enemyName.length);
-console.log(enemyName[0]);
-console.log(enemyName[3]);
 
 var fight = function(enemyName) {
     while (playerHealth > 0 && enemyHealth > 0) {
@@ -73,15 +69,15 @@ var fight = function(enemyName) {
     playerHealth = 100;
     playerAttack = 10;
     playerMoney = 10;
-  for(var i = 0; i < enemyName.length; i++) {
+  for(var i = 0; i < enemyNames.length; i++) {
     if (playerHealth > 0) {
         window.alert("Welcome to Robot Gladiators! Round " + (i + 1) );
-        var pickedEnemyName = enemyName[i];
+        var pickedEnemyName = enemyNames[i];
         enemyHealth = 50;
         // debugger;
         fight(pickedEnemyName);
         // if player is still alive and we're not at the last enemy in the array
-        if (playerHealth > 0 && i < enemyName.length - 1) {
+        if (playerHealth > 0 && i < enemyNames.length - 1) {
           //ask if player wants to use the store before next round
           var storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
           //if yes, take them to the store() function
